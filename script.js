@@ -1,7 +1,7 @@
 // frontend/script.js
 
 // Backend API Base URL
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL ="https://your-render-service-name.onrender.com/api";
 
 // --- 1. Static Skills Data (Curated Learning Pathways) ---
 const staticSkills = [
