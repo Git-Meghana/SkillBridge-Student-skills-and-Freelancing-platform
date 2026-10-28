@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SkillBridge helps students discover skills and explore freelance projects.">
+  <title>SkillBridge | Student Skills & Freelancing</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">S</span> SkillBridge</a>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="navLinks" class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#applications">Applications</a>
+      <a href="#profile">Profile</a>
+    </nav>
+    <div class="header-actions">
+      <button id="loginButton" class="button button-quiet" type="button">Log in</button>
+      <button id="registerButton" class="button button-primary" type="button">Get started</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">LEARN · BUILD · EARN</p>
+        <h1>Turn your skills into <span>opportunities.</span></h1>
+        <p class="hero-description">Discover learning resources, explore student-friendly projects, and take the next step toward your freelancing journey.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore projects</a>
+          <a class="button button-quiet" href="#skills">Discover skills →</a>
+        </div>
+        <div class="hero-note"><span class="status-dot"></span> Made for students taking their first step</div>
+      </div>
+      <div class="hero-panel">
+        <div class="panel-top"><span class="panel-icon">✦</span><span class="pill">Your next chapter</span></div>
+        <h2>Small skills. Real progress.</h2>
+        <div class="progress-row"><span>Learn something new</span><strong>01</strong></div>
+        <div class="progress-line"><span style="width:72%"></span></div>
+        <div class="progress-row"><span>Build your portfolio</span><strong>02</strong></div>
+        <div class="progress-line"><span style="width:48%"></span></div>
+        <div class="progress-row"><span>Find your first project</span><strong>03</strong></div>
+        <div class="progress-line"><span style="width:24%"></span></div>
+        <p class="panel-foot">Your journey starts with one step.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="section-wrap section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">GROW YOUR SKILLS</p>
+          <h2>Learn something valuable</h2>
+          <p>Explore beginner-friendly skills and resources.</p>
+        </div>
+      </div>
+      <div id="skillsGrid" class="card-grid">
+        <p class="muted">Loading skills…</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section-wrap section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">MAKE IT PRACTICAL</p>
+          <h2>Projects to explore</h2>
+          <p>Find opportunities that match your interests.</p>
+        </div>
+      </div>
+      <form id="projectSearchForm" class="search-bar">
+        <label class="sr-only" for="projectSearch">Search projects</label>
+        <input id="projectSearch" type="search" placeholder="Search projects or skills…">
+        <label class="sr-only" for="categoryFilter">Filter by category</label>
+        <select id="categoryFilter">
+          <option value="">All categories</option>
+          <option>Design</option>
+          <option>Development</option>
+          <option>Video Editing</option>
+          <option>Marketing</option>
+        </select>
+        <button class="button button-primary" type="submit">Search</button>
+      </form>
+      <p id="projectMessage" class="message" aria-live="polite"></p>
+      <div id="projectsGrid" class="card-grid">
+        <p class="muted">Loading projects…</p>
+      </div>
+    </section>
+
+    <section id="applications" class="section-wrap section-block section-tint">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">KEEP TRACK</p>
+          <h2>Your applications</h2>
+          <p>Applications you submit will be listed here once authentication and application saving are connected.</p>
+        </div>
+      </div>
+      <div id="applicationsList" class="card-grid">
+        <div class="empty-state">
+          <span class="empty-icon">▤</span>
+          <h3>No applications yet</h3>
+          <p>Explore projects to get started.</p>
+          <a class="button button-primary" href="#projects">Explore projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile" class="section-wrap section-block">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR SPACE</p>
+          <h2>Build your student profile</h2>
+          <p>Keep your introduction and skills ready for future opportunities.</p>
+        </div>
+      </div>
+      <form id="profileForm" class="form-card">
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input id="fullName" name="fullName" minlength="2" maxlength="80" required placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="portfolioUrl">Portfolio URL (optional)</label>
+            <input id="portfolioUrl" name="portfolioUrl" type="url" placeholder="https://your-portfolio.example">
+          </div>
+          <div class="field field-full">
+            <label for="profileBio">Short bio</label>
+            <textarea id="profileBio" name="profileBio" maxlength="500" rows="3" placeholder="Tell us a little about yourself"></textarea>
+          </div>
+          <div class="field field-full">
+            <label for="profileSkills">Your skills (comma-separated)</label>
+            <input id="profileSkills" name="profileSkills" maxlength="300" required placeholder="HTML, Canva, Video Editing">
+          </div>
+        </div>
+        <button class="button button-primary" type="submit">Save demo profile</button>
+        <p id="profileMessage" class="message" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section id="authentication" class="section-wrap section-block section-tint">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">WELCOME TO SKILLBRIDGE</p>
+          <h2>Start your journey</h2>
+          <p>Authentication will be connected to Supabase in the next integration step.</p>
+        </div>
+      </div>
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button id="showLogin" class="auth-tab active" type="button" aria-pressed="true">Log in</button>
+          <button id="showRegister" class="auth-tab" type="button" aria-pressed="false">Create account</button>
+        </div>
+        <form id="loginForm">
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" required minlength="8" placeholder="At least 8 characters">
+          </div>
+          <button class="button button-primary full-width" type="submit">Log in</button>
+        </form>
+        <form id="registerForm" hidden>
+          <div class="field">
+            <label for="registerName">Full name</label>
+            <input id="registerName" type="text" required minlength="2" maxlength="80" placeholder="Your name">
+          </div>
+          <div class="field">
+            <label for="registerEmail">Email</label>
+            <input id="registerEmail" type="email" required placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label for="registerPassword">Password</label>
+            <input id="registerPassword" type="password" required minlength="8" placeholder="At least 8 characters">
+          </div>
+          <button class="button button-primary full-width" type="submit">Create account</button>
+        </form>
+        <p id="authMessage" class="message" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="#home"><span class="brand-mark">S</span> SkillBridge</a>
+    <p>Helping students move from learning to doing.</p>
+    <small>Student project prototype · SkillBridge</small>
+  </footer>
+</body>
+</html>
