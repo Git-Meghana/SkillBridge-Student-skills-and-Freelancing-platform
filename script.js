@@ -1,7 +1,7 @@
 // frontend/script.js
 
 // Backend API Base URL
-const API_BASE_URL =" https://skillbridge-student-skills-and.onrender.com"
+const API_BASE_URL =" https://skillbridge-student-skills-and.onrender.com/api"
 
 // --- 1. Static Skills Data (Curated Learning Pathways) ---
 const staticSkills = [
